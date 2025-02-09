@@ -12,7 +12,7 @@ export default {
 
 <template>
 	<div class="hero-arera course-item-height"
-		:style="{ backgroundImage: `url(/img/courses/banner.png)`, backgroundSize: 'contain' }">
+		:style="{ backgroundImage: `url(/img/courses/banner.png)`, backgroundSize: 'cover' }">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
