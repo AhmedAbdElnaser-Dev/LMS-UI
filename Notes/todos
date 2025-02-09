@@ -1,0 +1,43 @@
+
+# Al-Amal Development Levels To-Dos
+
+## Level 1: Core Functionality
+- [x] Establish user registration, login, roles assignment, and profile management.
+- [] Define roles and permissions system.
+- [] Implement basic course management (add/edit courses, assign manager).
+- [] Create group management for courses with teacher assignments.
+- [] Implement authentication and authorization system.
+
+## Level 2: Interaction and Engagement
+- [] Implement course enrollment process with approval system.
+- [] Develop student group joining and viewing functionality.
+- [] Add attendance tracking for sessions.
+- [] Enable material upload and assignment creation with due dates.
+- [] Integrate notification system for updates and reminders.
+
+## Level 3: Monitoring and Feedback
+- [] Develop student progress tracking system.
+- [] Implement grading system with teacher feedback.
+- [] Add course rating and review functionality.
+
+## Level 4: Advanced Features
+- [] Develop departmental management for course requests and users.
+- [] Implement session management for group and private lessons.
+- [] Notify students about homework assignments.
+- [] Add tags and categorization for courses.
+- [] Implement payment handling for enrollments.
+
+=============================================================================================
+
+- [x] add course data
+- [x] handla languages
+- [x] fix redirect
+- [x] add media
+- [x] debug course details language
+- [x] update course data
+- [x] fix language issues
+- [x] sperate course details into components
+- [] fix header dir
+- [] handle auth
+- [] header base on auth
+- [] enroll course form

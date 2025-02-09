@@ -1,0 +1,91 @@
+users:
+	- Visitor
+	- Student
+	- teacher
+
+	- manager
+	- supervisor
+	- admin
+
+click book:
+	user form: (name - email - password - age - gender - timezone -  - telegram number - phone number	 - avilable time)
+
+	when book present notfication
+
+
+course requests 
+	avilable for (visitor - supervisor - admin)
+	supervisor based on department
+	form 
+
+
+
+course:
+	- add and update just from manager
+	- supervisor can add and update teachers
+	- containes prerequisits
+	- name - description x- about - demo -> added by manager only
+	- can containes levels
+
+levele: 
+	name and course and book
+
+material:
+	name description course  url
+
+admin can add departments
+manager can add levels abd materials
+
+
+
+learn:
+	- Arabic
+	- Quran
+	- tajweed
+	
+session can be fro group (name - time) or private
+
+when teacher added homework the student will get a notification
+
+
+
+
+
+
+
+
+
+
+
+
+Tables
+Users Table
+Fields: id, name, email, password, age, gender, timezone, telegram_number, phone_number, available_time, role (Visitor, Student, Teacher, Manager, Supervisor, Admin).
+
+Books Table
+Fields: id, name, description, course_id, url_pdf, url_pic.
+
+Courses Table
+Fields: id, name, description, about, demo_url, prerequisites, added_by.
+
+Levels Table
+Fields: id, name, course_id, book_id.
+
+Materials Table
+Fields: id, name, description, course_id, url.
+
+Departments Table
+Fields: id, name.
+
+CourseRequests Table
+Fields: id, user_id, course_id, status, supervisor_id, department_id.
+
+Sessions Table
+Fields: id, name, time, type (Group, Private), teacher_id.
+
+HomeworkNotifications Table
+Fields: id, teacher_id, student_id, course_id, message.
+
+
+
+Cairo - Amiri

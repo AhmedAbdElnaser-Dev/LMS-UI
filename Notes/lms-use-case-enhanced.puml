@@ -1,0 +1,111 @@
+@startuml LMS Use Case Diagram
+
+skinparam actorStyle awesome
+left to right direction
+
+' Actors
+:Visitor: as visitor
+:Student: as student
+:Teacher: as teacher
+:Manager: as manager
+:Supervisor: as supervisor
+:Admin: as admin
+
+' Generalization
+visitor <|-- student
+
+rectangle "Al-Amal LMS" {
+    ' Visitor Use Cases
+    usecase "Browse Books" as browseBooks
+    usecase "Browse Courses" as browseCourses
+    usecase "Submit Course Request" as submitRequest
+
+    ' Student Use Cases
+    usecase "Enroll in Course" as enrollCourse
+    usecase "Join Sessions" as joinSessions
+    usecase "Access Books" as accessBooks
+    usecase "Receive Notifications" as receiveNotifs
+    usecase "Track Progress" as trackProgress
+    usecase "Make Payments" as makePayments
+    usecase "Provide Feedback" as provideFeedback
+
+    ' Teacher Use Cases
+    usecase "Create Homework" as createHomework
+    usecase "Manage Sessions" as manageSessions
+    usecase "Monitor Student Progress" as monitorProgress
+    usecase "Communicate with Students" as communicateStudents
+    usecase "Provide Course Feedback" as courseFeedback
+
+    ' Manager Use Cases
+    usecase "Add/Update Courses" as manageCourses
+    usecase "Manage Levels" as manageLevels
+    usecase "Manage Groups" as manageGroups
+    usecase "Manage Materials" as manageMaterials
+    usecase "Assign Supervisors" as assignSupervisors
+    usecase "Analyze Course Performance" as analyzeCourses
+
+    ' Supervisor Use Cases
+    usecase "Approve Course Requests" as approveRequests
+    usecase "Assign Teachers" as assignTeachers
+    usecase "Monitor Department Activities" as monitorDept
+    usecase "Analyze Department Data" as analyzeDept
+
+    ' Admin Use Cases
+    usecase "Manage Departments" as manageDepts
+    usecase "Full System Control" as systemControl
+    usecase "Access Management" as accessManagement
+}
+
+' Visitor Associations
+visitor --> browseBooks
+visitor --> browseCourses
+visitor --> submitRequest
+
+' Student Associations
+student --> enrollCourse
+student --> joinSessions
+student --> accessBooks
+student --> receiveNotifs
+student --> trackProgress
+student --> makePayments
+student --> provideFeedback
+
+' Teacher Associations
+teacher --> createHomework
+teacher --> manageSessions
+teacher --> monitorProgress
+teacher --> communicateStudents
+teacher --> courseFeedback
+
+' Manager Associations
+manager --> manageCourses
+manager --> manageLevels
+manager --> manageGroups
+manager --> manageMaterials
+manager --> assignSupervisors
+manager --> analyzeCourses
+
+' Supervisor Associations
+supervisor --> approveRequests
+supervisor --> assignTeachers
+supervisor --> monitorDept
+supervisor --> analyzeDept
+
+' Admin Associations
+admin --> manageDepts
+admin --> systemControl
+admin --> accessManagement
+
+' Include relationships
+manageDepts ..> assignSupervisors : <<include>>
+systemControl ..> manageCourses : <<include>>
+systemControl ..> manageDepts : <<include>>
+systemControl ..> accessManagement : <<include>>
+
+' Extend relationships
+enrollCourse .> submitRequest : <<extend>>
+manageSessions .> monitorProgress : <<extend>>
+analyzeCourses .> monitorDept : <<extend>>
+communicateStudents .> receiveNotifs : <<extend>>
+
+@enduml

@@ -1,0 +1,249 @@
+@startuml LMS Database Diagram
+
+!define table(x) class x << (T,#FFAAAA) >>
+!define primary_key(x) <u>x</u>
+!define foreign_key(x) #x#
+
+skinparam class {
+    BackgroundColor White
+    ArrowColor #2688d4
+    BorderColor #2688d4
+}
+
+' Tables
+table(Users) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+    email: VARCHAR(255)
+    password: VARCHAR(255)
+    age: INTEGER
+    gender: VARCHAR(50)
+    timezone: VARCHAR(100)
+    telegram_number: VARCHAR(50)
+    phone_number: VARCHAR(50)
+    available_time: TIMESTAMP
+    foreign_key(role_id): UUID
+}
+
+table(Roles) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+    description: TEXT
+}
+
+table(RolePermissions) {
+    primary_key(id): UUID
+    foreign_key(role_id): UUID
+    permission: VARCHAR(255)
+}
+
+table(Courses) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+    description: TEXT
+    about: TEXT
+    demo_url: VARCHAR(255)
+    prerequisites: TEXT
+    foreign_key(added_by): UUID
+}
+
+table(Books) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+    description: TEXT
+    foreign_key(course_id): UUID
+    url_pdf: VARCHAR(255)
+    url_pic: VARCHAR(255)
+}
+
+table(Levels) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+    foreign_key(course_id): UUID
+    foreign_key(book_id): UUID
+}
+
+table(Materials) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+    description: TEXT
+    foreign_key(course_id): UUID
+    url: VARCHAR(255)
+}
+
+table(Groups) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+    foreign_key(course_id): UUID
+    time: TIMESTAMP
+    private: BOOLEAN
+    foreign_key(teacher_id): UUID
+}
+
+table(StudentGroups) {
+    primary_key(id): UUID
+    foreign_key(student_id): UUID
+    foreign_key(group_id): UUID
+}
+
+table(CourseRequests) {
+    primary_key(id): UUID
+    foreign_key(user_id): UUID
+    foreign_key(course_id): UUID
+    status: VARCHAR(50)
+    foreign_key(supervisor_id): UUID
+    foreign_key(department_id): UUID
+}
+
+table(Sessions) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+    time: TIMESTAMP
+    type: ENUM('group', 'private')
+    foreign_key(teacher_id): UUID
+    foreign_key(group_id): UUID
+}
+
+table(HomeworkNotifications) {
+    primary_key(id): UUID
+    foreign_key(teacher_id): UUID
+    foreign_key(student_id): UUID
+    foreign_key(course_id): UUID
+    message: TEXT
+}
+
+table(Departments) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+}
+
+table(Attendance) {
+    primary_key(id): UUID
+    foreign_key(student_id): UUID
+    foreign_key(session_id): UUID
+    status: ENUM('present', 'absent', 'late')
+    timestamp: TIMESTAMP
+}
+
+table(Assignments) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+    description: TEXT
+    due_date: TIMESTAMP
+    foreign_key(course_id): UUID
+    foreign_key(group_id): UUID
+}
+
+table(Grades) {
+    primary_key(id): UUID
+    foreign_key(assignment_id): UUID
+    foreign_key(student_id): UUID
+    grade: DECIMAL(5, 2)
+    feedback: TEXT
+    submitted_at: TIMESTAMP
+}
+
+table(Messages) {
+    primary_key(id): UUID
+    foreign_key(sender_id): UUID
+    foreign_key(receiver_id): UUID
+    content: TEXT
+    sent_at: TIMESTAMP
+    read: BOOLEAN
+}
+
+table(Notifications) {
+    primary_key(id): UUID
+    foreign_key(user_id): UUID
+    title: VARCHAR(255)
+    message: TEXT
+    is_read: BOOLEAN
+    sent_at: TIMESTAMP
+}
+
+table(Payments) {
+    primary_key(id): UUID
+    foreign_key(user_id): UUID
+    amount: DECIMAL(10, 2)
+    payment_date: TIMESTAMP
+    status: ENUM('pending', 'completed', 'failed')
+    method: ENUM('credit_card', 'paypal', 'bank_transfer')
+}
+
+table(Progress) {
+    primary_key(id): UUID
+    foreign_key(student_id): UUID
+    foreign_key(course_id): UUID
+    foreign_key(level_id): UUID
+    status: ENUM('not_started', 'in_progress', 'completed')
+    last_accessed: TIMESTAMP
+}
+
+table(Reviews) {
+    primary_key(id): UUID
+    foreign_key(user_id): UUID
+    foreign_key(course_id): UUID
+    rating: DECIMAL(3, 2)
+    comment: TEXT
+    created_at: TIMESTAMP
+}
+
+table(Tags) {
+    primary_key(id): UUID
+    name: VARCHAR(255)
+}
+
+table(CourseTags) {
+    primary_key(id): UUID
+    foreign_key(course_id): UUID
+    foreign_key(tag_id): UUID
+}
+
+' Relationships
+Roles "1" -- "0..*" Users : assigned_to
+Roles "1" -- "0..*" RolePermissions : defines
+
+Users "1" -- "0..*" CourseRequests : submits
+Users "1" -- "0..*" StudentGroups : joins
+Users "1" -- "0..*" Sessions : teaches
+Users "1" -- "0..*" HomeworkNotifications : receives
+Users "1" -- "0..*" Courses : manages
+Users "1" -- "0..*" Messages : communicates
+Users "1" -- "0..*" Notifications : receives
+Users "1" -- "0..*" Payments : makes
+Users "1" -- "0..*" Reviews : submits
+Users "1" -- "0..*" Grades : receives
+Users "1" -- "0..*" Progress : tracks
+
+Courses "1" -- "0..*" Books : contains
+Courses "1" -- "0..*" Levels : has
+Courses "1" -- "0..*" Materials : includes
+Courses "1" -- "0..*" CourseRequests : requested_for
+Courses "1" -- "0..*" Groups : organized_for
+Courses "1" -- "0..*" Assignments : has
+Courses "1" -- "0..*" Reviews : receives
+Courses "1" -- "0..*" Progress : tracks
+
+Groups "1" -- "0..*" StudentGroups : includes
+Groups "1" -- "0..*" Sessions : schedules
+Groups "1" -- "1" Users : led_by
+Groups "1" -- "0..*" Assignments : receives
+
+Books "1" -- "0..*" Levels : assigned_to
+
+Departments "1" -- "0..*" CourseRequests : handles
+
+Attendance "0..*" -- "1" Sessions : tracks
+Attendance "0..*" -- "1" Users : for
+
+CourseTags "1" -- "0..*" Tags : organizes
+CourseTags "1" -- "0..*" Courses : categorizes
+
+Grades "1" -- "1" Assignments : for
+Grades "1" -- "1" Users : given_to
+
+Progress "1" -- "1" Users : by
+Progress "1" -- "1" Courses : for
+Progress "1" -- "1" Levels : at
+
+@enduml

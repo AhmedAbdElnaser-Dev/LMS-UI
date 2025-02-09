@@ -1,0 +1,92 @@
+@startuml LMS Use Case Diagram
+
+skinparam actorStyle awesome
+left to right direction
+
+' Actors
+:Visitor: as visitor
+:Student: as student
+:Teacher: as teacher
+:Manager: as manager
+:Supervisor: as supervisor
+:Admin: as admin
+
+' Generalization
+visitor <|-- student
+
+rectangle "Al-Amal" {
+    ' Visitor Use Cases
+    usecase "Browse Books" as browseBooks
+    usecase "Browse Courses" as browseCourses
+    usecase "Submit Course Request" as submitRequest
+
+    ' Student Use Cases
+    usecase "Enroll in Course" as enrollCourse
+    usecase "Join Sessions" as joinSessions
+    usecase "Access Books" as accessBooks
+    usecase "Receive Notifications" as receiveNotifs
+
+    ' Teacher Use Cases
+    usecase "Create Homework" as createHomework
+    usecase "Manage Sessions" as manageSessions
+    usecase "Monitor Student Progress" as monitorProgress
+
+    ' Manager Use Cases
+    usecase "Add/Update Courses" as manageCourses
+    usecase "Manage Levels" as manageLevels
+    usecase "Manage Groups" as manageGroups
+    usecase "Manage Materials" as manageMaterials
+    usecase "Assign Supervisors" as assignSupervisors
+
+    ' Supervisor Use Cases
+    usecase "Approve Course Requests" as approveRequests
+    usecase "Assign Teachers" as assignTeachers
+    usecase "Monitor Department Activities" as monitorDept
+
+    ' Admin Use Cases
+    usecase "Manage Departments" as manageDepts
+    usecase "Full System Control" as systemControl
+}
+
+' Visitor Associations
+visitor --> browseBooks
+visitor --> browseCourses
+visitor --> submitRequest
+
+' Student Associations
+student --> enrollCourse
+student --> joinSessions
+student --> accessBooks
+student --> receiveNotifs
+
+' Teacher Associations
+teacher --> createHomework
+teacher --> manageSessions
+teacher --> monitorProgress
+
+' Manager Associations
+manager --> manageCourses
+manager --> manageLevels
+manager --> manageGroups
+manager --> manageMaterials
+manager --> assignSupervisors
+
+' Supervisor Associations
+supervisor --> approveRequests
+supervisor --> assignTeachers
+supervisor --> monitorDept
+
+' Admin Associations
+admin --> manageDepts
+admin --> systemControl
+
+' Include relationships
+manageDepts ..> assignSupervisors : <<include>>
+systemControl ..> manageCourses : <<include>>
+systemControl ..> manageDepts : <<include>>
+
+' Extend relationships
+enrollCourse .> submitRequest : <<extend>>
+manageSessions .> monitorProgress : <<extend>>
+
+@enduml
