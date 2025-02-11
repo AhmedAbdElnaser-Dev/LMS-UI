@@ -2,6 +2,11 @@
 	"courses": [
 		{
 			"id": 1,
+			"category": [
+				"Quraan",
+				"Tajweed",
+				"Arabic"
+			],
 			"courseImage": "/img/courses/tag/course_نورانية 1.png",
 			"development": false,
 			"badge": "Arabic",
@@ -143,6 +148,9 @@
 		},
 		{
 			"id": 2,
+			"category": [
+				"Arabic"
+			],
 			"courseImage": "/img/courses/tag/course_نورانية 1.png",
 			"development": false,
 			"badge": "Arabic",
@@ -292,6 +300,9 @@
 		},
 		{
 			"id": 4,
+			"category": [
+				"Arabic"
+			],
 			"courseImage": "/img/courses/tag/course_نورانية 1.png",
 			"development": false,
 			"badge": "Arabic",
@@ -387,6 +398,9 @@
 		},
 		{
 			"id": 5,
+			"category": [
+				"Tajweed"
+			],
 			"courseImage": "/img/courses/tag/course_نورانية 1.png",
 			"development": false,
 			"badge": "Arabic",
@@ -489,6 +503,9 @@
 		},
 		{
 			"id": 6,
+			"category": [
+				"Tajweed"
+			],
 			"courseImage": "/img/courses/tag/course_نورانية 1.png",
 			"development": false,
 			"badge": "Arabic",
@@ -591,6 +608,10 @@
 		},
 		{
 			"id": 7,
+			"category": [
+				"Quraan",
+				"Tajweed"
+			],
 			"courseImage": "/img/courses/tag/course_نورانية 1.png",
 			"development": false,
 			"badge": "Arabic",
@@ -670,6 +691,11 @@
 		},
 		{
 			"id": 8,
+			"category": [
+				"Quraan",
+				"Tajweed",
+				"Arabic"
+			],
 			"courseImage": "/img/courses/tag/course_نورانية 1.png",
 			"development": false,
 			"badge": "Arabic",
