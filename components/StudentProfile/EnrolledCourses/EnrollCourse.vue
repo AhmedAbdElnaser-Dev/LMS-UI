@@ -12,8 +12,8 @@
                     (2)</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed" type="button"
-                    role="tab" aria-controls="completed" aria-selected="false">Completed Courses
+                <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed"
+                    type="button" role="tab" aria-controls="completed" aria-selected="false">Completed Courses
                     (0)</button>
             </li>
         </ul>
@@ -21,7 +21,8 @@
             <div class="tab-pane fade show active" id="enrolled" role="tabpanel" aria-labelledby="enrolled-tab">
                 <div class="student-profile-enrolled-course">
                     <div class="row">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" v-for="item in courseItemss.slice(0, 5)" :key="item.id">
+                        <!-- <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" v-for="item in courseItemss.slice(0, 5)"
+                            :key="item.id">
                             <div class="eduman-course-main-wrapper mb-30">
                                 <div class="eduman-course-thumb w-img">
                                     <NuxtLink :to="`/course-details/${item.id}`"><img :src="item.courseImage"
@@ -42,16 +43,19 @@
                                             </div>
                                             <div class="info-cart-text">
                                                 <ul>
-                                                    <li v-for="itemTwo in item.infoList"
-                                                        :key="itemTwo.infoListTitle"><i class="far fa-check"></i>{{
-                                                                itemTwo.infoListTitle
-                                                        }}</li>
+                                                    <li v-for="itemTwo in item.infoList" :key="itemTwo.infoListTitle"><i
+                                                            class="far fa-check"></i>{{
+                            itemTwo.infoListTitle
+                        }}</li>
                                                 </ul>
                                             </div>
                                             <div class="course-action">
-                                                <NuxtLink :to="`/course-details/${item.id}`" class="view-details-btn">{{ item.viewBtn }}</NuxtLink>
-                                                <NuxtLink to="/cart" class="c-share-btn"><i :class="item.shareIcon"></i></NuxtLink>
-                                                <NuxtLink to="/wishlist" class="c-share-btn"><i :class="item.wishIcon"></i></NuxtLink>
+                                                <NuxtLink :to="`/course-details/${item.id}`" class="view-details-btn">{{
+                            item.viewBtn }}</NuxtLink>
+                                                <NuxtLink to="/cart" class="c-share-btn"><i :class="item.shareIcon"></i>
+                                                </NuxtLink>
+                                                <NuxtLink to="/wishlist" class="c-share-btn"><i
+                                                        :class="item.wishIcon"></i></NuxtLink>
                                             </div>
                                         </div>
                                     </div>
@@ -73,8 +77,8 @@
                                             <del class="price-old">{{ item.priceOld }}</del>
                                         </div>
                                         <div class="eduman-course-tutor">
-                                            <NuxtLink to="/instructor"><img :src="item.instructorImage"
-                                                    alt="tutor-img"></NuxtLink>
+                                            <NuxtLink to="/instructor"><img :src="item.instructorImage" alt="tutor-img">
+                                            </NuxtLink>
                                             <NuxtLink to="/instructor"><span>{{ item.instructor }}</span></NuxtLink>
                                         </div>
                                     </div>
@@ -86,19 +90,20 @@
                                     </div>
                                     <div class="course-deteals-btn">
                                         <NuxtLink :to="`/course-details/${item.id}`"><span class="me-2">{{
-                                                item.viewBtn
-                                        }}</span><i class="far fa-arrow-right"></i></NuxtLink>
+                            item.viewBtn
+                        }}</span><i class="far fa-arrow-right"></i></NuxtLink>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
             <div class="tab-pane fade" id="active" role="tabpanel" aria-labelledby="active-tab">
                 <div class="student-profile-enrolled-course">
                     <div class="row">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" v-for="item in courseItemss.slice(0, 2)" :key="item.id">
+                        <!-- <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" v-for="item in courseItemss.slice(0, 2)"
+                            :key="item.id">
                             <div class="eduman-course-main-wrapper mb-30">
                                 <div class="eduman-course-thumb w-img">
                                     <NuxtLink :to="`/course-details/${item.id}`"><img :src="item.courseImage"
@@ -119,16 +124,19 @@
                                             </div>
                                             <div class="info-cart-text">
                                                 <ul>
-                                                    <li v-for="itemTwo in item.infoList"
-                                                        :key="itemTwo.infoListTitle"><i class="far fa-check"></i>{{
-                                                                itemTwo.infoListTitle
-                                                        }}</li>
+                                                    <li v-for="itemTwo in item.infoList" :key="itemTwo.infoListTitle"><i
+                                                            class="far fa-check"></i>{{
+                            itemTwo.infoListTitle
+                        }}</li>
                                                 </ul>
                                             </div>
                                             <div class="course-action">
-                                                <NuxtLink :to="`/course-details/${item.id}`" class="view-details-btn">{{ item.viewBtn }}</NuxtLink>
-                                                <NuxtLink to="/cart" class="c-share-btn"><i :class="item.shareIcon"></i></NuxtLink>
-                                                <NuxtLink to="/wishlist" class="c-share-btn"><i :class="item.wishIcon"></i></NuxtLink>
+                                                <NuxtLink :to="`/course-details/${item.id}`" class="view-details-btn">{{
+                            item.viewBtn }}</NuxtLink>
+                                                <NuxtLink to="/cart" class="c-share-btn"><i :class="item.shareIcon"></i>
+                                                </NuxtLink>
+                                                <NuxtLink to="/wishlist" class="c-share-btn"><i
+                                                        :class="item.wishIcon"></i></NuxtLink>
                                             </div>
                                         </div>
                                     </div>
@@ -150,8 +158,8 @@
                                             <del class="price-old">{{ item.priceOld }}</del>
                                         </div>
                                         <div class="eduman-course-tutor">
-                                            <NuxtLink to="/instructor"><img :src="item.instructorImage"
-                                                    alt="tutor-img"></NuxtLink>
+                                            <NuxtLink to="/instructor"><img :src="item.instructorImage" alt="tutor-img">
+                                            </NuxtLink>
                                             <NuxtLink to="/instructor"><span>{{ item.instructor }}</span></NuxtLink>
                                         </div>
                                     </div>
@@ -164,11 +172,11 @@
                                     <div class="course-deteals-btn">
                                         <NuxtLink :to="`/course-details/${item.id}`"><span class="me-2">{{
                                                 item.viewBtn
-                                        }}</span><i class="far fa-arrow-right"></i></NuxtLink>
+                                                }}</span><i class="far fa-arrow-right"></i></NuxtLink>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -182,10 +190,7 @@
 </template>
 
 <script>
-import courseItemsMixin from "../../../mixins/courseItemsMixin";
-
 export default {
     name: "app",
-    mixins: [courseItemsMixin],
 };
 </script>

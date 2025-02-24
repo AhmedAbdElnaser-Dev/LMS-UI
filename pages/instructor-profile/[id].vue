@@ -105,7 +105,7 @@
                                                     <NuxtLink to="/instructor-profile"><img :src="item.instructorImage"
                                                             alt="tutor-img"></NuxtLink>
                                                     <NuxtLink to="/instructor-profile"><span>{{ item.instructor
-                                                    }}</span>
+                                                            }}</span>
                                                     </NuxtLink>
                                                 </div>
                                                 <p>{{ item.description }}</p>
@@ -171,5 +171,3 @@ export default {
     components: { FooterOne, Pagination, HeaderFour }
 };
 </script>
-
-

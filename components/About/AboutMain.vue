@@ -33,7 +33,7 @@ export default {
     <div>
 
         <!-- header-area-start -->
-        <HeaderFour />
+        <!-- <HeaderFour /> -->
         <!-- header-area-end -->
 
         <!-- PageTitle-area-end -->
@@ -49,7 +49,7 @@ export default {
         <!-- feature-area-end -->
 
         <!-- Video-area-start -->
-        <VideoSection />
+        <!-- <VideoSection /> -->
         <!-- Video-area-end -->
 
         <!-- Counter-area-start -->
@@ -69,7 +69,7 @@ export default {
         <!-- AffiliateSection-area-end -->
 
         <!-- education-area-start -->
-        <FooterOne />
+        <!-- <FooterOne /> -->
         <!-- education-area-end -->
 
         <!-- scrolltop-area-start -->

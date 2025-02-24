@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- header-area-start -->
-        <HeaderFour />
+        <!-- <HeaderFour /> -->
         <!-- header-area-end -->
 
         <!-- PageTitle-area-start -->
@@ -13,7 +13,7 @@
         <!-- SignUpContent-area-end -->
 
         <!-- Footer-area-start -->
-        <FooterOne />
+        <!-- <FooterOne /> -->
         <!-- Footer-area-end -->
 
         <!-- scrolltop-area-start -->
@@ -34,11 +34,11 @@ import SignUpContent from './SignUpContent.vue';
 export default {
     name: "app",
     components: {
-    HeaderFour,
-    PageTitle,
-    SignUpContent,
-    FooterOne,
-    ScrollToTop
-}
+        HeaderFour,
+        PageTitle,
+        SignUpContent,
+        FooterOne,
+        ScrollToTop
+    }
 };
 </script>

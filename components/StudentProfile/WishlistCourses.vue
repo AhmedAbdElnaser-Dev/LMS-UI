@@ -1,7 +1,7 @@
 <template>
     <div class="student-profile-wishlist">
         <div class="row">
-            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" v-for="item in courseItemss.slice(5, 8)" :key="item.id">
+            <!-- <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6" v-for="item in courseItemss.slice(5, 8)" :key="item.id">
                 <div class="eduman-course-main-wrapper mb-30">
                     <div class="eduman-course-thumb w-img">
                         <NuxtLink :to="`/course-details/${item.id}`"><img :src="item.courseImage" alt="course-img">
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>

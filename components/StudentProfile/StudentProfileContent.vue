@@ -3,11 +3,13 @@
         <div class="container">
             <div class="student-profile-author pb-30">
                 <div class="student-profile-author-img">
-                    <img src="/img/course/course-student.png" alt="img not found" />
+                    <img src="https://thumbs.dreamstime.com/b/joyful-d-cartoon-boy-islamic-attire-reads-quran-character-reading-ai-generated-308549544.jpg"
+                        alt="img not found" />
                 </div>
                 <div class="student-profile-author-text">
                     <span>Hello,</span>
-                    <h3 class='student-profile-author-name'>David Allberto</h3>
+                    <h3 class='student-profile-author-name'>{{ authStore.user.firstName + " " + authStore.user.lastName
+                        }}</h3>
                 </div>
             </div>
             <div class="row">
@@ -15,9 +17,9 @@
                     <div class="student-profile-sidebar mb-30">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                                    type="button" role="tab" aria-controls="home" aria-selected="true"><i
-                                        class="fas fa-tachometer-alt-fast"></i>
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                                    aria-selected="true"><i class="fas fa-tachometer-alt-fast"></i>
                                     Dashboard</button>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -32,16 +34,16 @@
                                     Courses</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="wishlist-tab" data-bs-toggle="tab" data-bs-target="#wishlist"
-                                    type="button" role="tab" aria-controls="wishlist" aria-selected="false"><i
-                                        class="fas fa-bookmark"></i> Wishlist</button>
+                                <button class="nav-link" id="wishlist-tab" data-bs-toggle="tab"
+                                    data-bs-target="#wishlist" type="button" role="tab" aria-controls="wishlist"
+                                    aria-selected="false"><i class="fas fa-bookmark"></i> Wishlist</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews"
                                     type="button" role="tab" aria-controls="reviews" aria-selected="false"><i
                                         class="fas fa-star"></i> Reviews</button>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            <!-- <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz"
                                     type="button" role="tab" aria-controls="quiz" aria-selected="false"><i
                                         class="fas fa-cubes"></i> My Quiz Attempts</button>
@@ -62,11 +64,11 @@
                                 <button class="nav-link" id="setting-tab" data-bs-toggle="tab" data-bs-target="#setting"
                                     type="button" role="tab" aria-controls="setting" aria-selected="false"><i
                                         class="fas fa-cog"></i> Settings</button>
-                            </li>
+                            </li> -->
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="logout-tab" data-bs-toggle="tab" data-bs-target="#logout"
                                     type="button" role="tab" aria-controls="logout" aria-selected="false">
-                                     <NuxtLink to="/signin"><i class="fas fa-sign-out-alt"></i>Logout</NuxtLink>
+                                    <NuxtLink to="/signin"><i class="fas fa-sign-out-alt"></i>Logout</NuxtLink>
                                 </button>
                             </li>
                         </ul>
@@ -81,7 +83,7 @@
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <h4 class='mb-25'>My Profile</h4>
-                                <StudentProfileBio />
+                                <StudentProfileBio :student="authStore.user" />
                             </div>
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <h4 class='mb-25'>Enrolled Courses</h4>
@@ -100,15 +102,15 @@
                             </div>
                             <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
                                 <h4 class='mb-25'>Order History</h4>
-                                <StudentProfileOrder />
+                                <!-- <StudentProfileOrder /> -->
                             </div>
                             <div class="tab-pane fade" id="ques" role="tabpanel" aria-labelledby="ques-tab">
                                 <p>No question completed yet.</p>
                             </div>
-                            <div class="tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab">
+                            <!-- <div class="tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab">
                                 <h4 class='mb-25'>Settings</h4>
                                 <StudentProfileSetting />
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -121,20 +123,27 @@ import StudentProfileDashboard from "./StudentProfileDashboard.vue"
 import StudentProfileBio from "./StudentProfileBio.vue"
 import WishlistCourses from "./WishlistCourses.vue"
 import WishlistReviews from "./WishlistReviews.vue"
-import StudentProfileOrder from "./StudentProfileOrder.vue"
-import StudentProfileSetting from "./StudentProfileSetting.vue"
+// import StudentProfileOrder from "./StudentProfileOrder.vue"
+// import StudentProfileSetting from "./StudentProfileSetting.vue"
 import EnrollCourse from "./EnrolledCourses/EnrollCourse.vue"
+import { useAuthStore } from '@/stores/authStore';
 
 export default {
     name: "app",
+    setup() {
+        const authStore = useAuthStore();
+        return {
+            authStore,
+        };
+    },
     components: {
         StudentProfileDashboard,
         StudentProfileBio,
         EnrollCourse,
         WishlistCourses,
         WishlistReviews,
-        StudentProfileOrder,
-        StudentProfileSetting,
+        // StudentProfileOrder,
+        // StudentProfileSetting,
     }
 };
 </script>

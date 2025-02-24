@@ -1,67 +1,19 @@
 <template>
     <nav id="mobile-menu">
         <ul>
-            <li class="menu-item-has-children">
-                <NuxtLink :to="localPath('/')">{{ $t("More") }}</NuxtLink>
-                <ul class="sub-menu">
-                    <li>
-                        <NuxtLink to="/">Home 1</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/homeTwo">Home 2</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/homeThree">Home 3</NuxtLink>
-                    </li>
-                </ul>
+            <li class="menu-item">
+                <NuxtLink to="/about">{{ $t("About") }}</NuxtLink>
             </li>
-            <li class="menu-item-has-children">
-                <NuxtLink to="/course">{{ $t("Guide") }}</NuxtLink>
-                <ul class="sub-menu">
-                    <li>
-                        <NuxtLink to="/course">Course 1</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/course-2">Course 2</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/course-3">Course 3</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/course-4">Course 4</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/course-details">Course Details</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/webinars">Webinars</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/webinar-details">Webinar Details</NuxtLink>
-                    </li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children">
+            <li class="menu-item">
                 <NuxtLink to="/shop">{{ $t("Courses") }}</NuxtLink>
-                <ul class="sub-menu">
-                    <li>
-                        <NuxtLink to="/shop">Shop</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/shop-details">Shop Details</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/wishlist">Wishlist</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/cart">Cart</NuxtLink>
-                    </li>
-                    <li>
-                        <NuxtLink to="/checkout">Checkout</NuxtLink>
-                    </li>
-                </ul>
             </li>
-            <li class="menu-item-has-children"><a href="javascript:void(0)">{{ $t("Sections") }}</a>
+            <li class="menu-item">
+                <NuxtLink to="/faq-page">{{ $t("FAQs") }}</NuxtLink>
+            </li>
+            <li class="menu-item">
+                <NuxtLink to="/event">{{ $t("Events") }}</NuxtLink>
+            </li>
+            <!-- <li class="menu-item-has-children"><a href="javascript:void(0)">{{ $t("Sections") }}</a>
                 <ul class="sub-menu">
                     <li>
                         <NuxtLink to="/about">About</NuxtLink>
@@ -145,12 +97,15 @@
                         <NuxtLink to="/404-page">404 pages</NuxtLink>
                     </li>
                 </ul>
-            </li>
+            </li> -->
         </ul>
     </nav>
 </template>
 
-<script setup lang="ts">
-const localPath = useLocalePath()
-
-</script>
+<style scoped lang="scss">
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+</style>

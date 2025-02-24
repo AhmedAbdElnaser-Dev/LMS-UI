@@ -23,7 +23,7 @@
                 <div class="container-fluid">
                     <div class="header-main-wrapper">
                         <div class="row align-items-center">
-                            <div class="col-xl-7 col-lg-7 col-md-5 col-sm-9 col-9">
+                            <div class="col-xl-8 col-lg-8 col-md-6 col-sm-10 col-10">
                                 <div class="header-left d-flex align-items-center">
                                     <div class="header-logo">
                                         <NuxtLink to="/"><img src="/img/logo/colioured logo&text.svg" alt="logo">
@@ -61,7 +61,7 @@
                                                     <path id="Path_33" data-name="Path 33"
                                                         d="M21.768,18H18.754a.754.754,0,0,0-.754.754v3.015a.754.754,0,0,0,.754.754h3.015a.754.754,0,0,0,.754-.754V18.754A.754.754,0,0,0,21.768,18Z"
                                                         transform="translate(-4.434 -4.434)" fill="#141517"></path>
-                                                </svg> <span class="text">Category</span></figure>
+                                                </svg> <span class="text">{{ $t("Category") }}</span></figure>
                                             <CategoryDropdown />
                                         </div>
                                     </div>
@@ -70,16 +70,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-5 col-lg-5 col-md-7 col-sm-3 col-3">
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-2 col-2">
                                 <div class="header-right d-flex align-items-center justify-content-end">
-                                    <div class="header-search d-none d-xxl-block mr-30">
-                                        <form action="#">
-                                            <div class="search-icon p-relative">
-                                                <input type="text" placeholder="Search courses...">
-                                                <button type="submit"><i class="fas fa-search"></i></button>
-                                            </div>
-                                        </form>
-                                    </div>
                                     <div class="translation-menu d-xl-block">
                                         <ul>
                                             <li class="menu-item-has-children">
@@ -128,7 +120,7 @@
                                             </div>
                                         </a>
                                     </div> -->
-                                    <div class="user-btn-inner p-relative d-none d-md-block">
+                                    <div v-if="!authStore.user" class="user-btn-inner p-relative d-none d-md-block">
                                         <div class="user-btn-wrapper">
                                             <div class="user-btn-content ">
                                                 <NuxtLink to="/signin" class="user-btn-sign-in">{{ $t("SignIn") }}
@@ -136,8 +128,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-none d-md-block">
+                                    <div v-if="!authStore.user" class="d-none d-md-block">
                                         <NuxtLink to="/signup" class="user-btn-sign-up edu-btn">{{ $t("SignUp") }}
+                                        </NuxtLink>
+                                    </div>
+                                    <div v-if="authStore.user">
+                                        <NuxtLink to="/student-profile"
+                                            class="d-flex justify-center flex-row gap-1 align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="40px"
+                                                height="40px" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                            </svg>
+
+                                            <h4 class="mb-0">{{ authStore.user.firstName }}</h4>
                                         </NuxtLink>
                                     </div>
                                     <div class="menu-bar d-xl-none ml-20">
@@ -378,25 +382,27 @@
         <!-- cart mini area end -->
     </div>
 </template>
-
 <script>
 import CategoryDropdown from './CategoryDropdown.vue';
 import MainNav from './MainNav.vue';
 import SidebarCartWidget from './SidebarCartWidget.vue';
 import { useI18n } from 'vue-i18n';
-
+import { useAuthStore } from '@/stores/authStore';
 
 export default {
-
-
     name: "app",
+
     setup() {
         const { locales, setLocale } = useI18n();
+        const authStore = useAuthStore();
+
         return {
             locales,
             setLocale,
-        }
+            authStore,
+        };
     },
+
     data() {
         return {
             langDir: "ltr",
@@ -418,15 +424,9 @@ export default {
         };
     },
 
-
     methods: {
         handleSticky() {
-            if (window.scrollY > 50) {
-                this.isSticky = true;
-            }
-            else {
-                this.isSticky = false;
-            }
+            this.isSticky = window.scrollY > 50;
         },
         handleSidebar() {
             this.showSidebar = true;
@@ -435,40 +435,38 @@ export default {
             this.showSidebar = false;
         },
         handleReminder() {
-            return this.hideReminder = !this.hideReminder;
+            this.hideReminder = !this.hideReminder;
         },
-        //         handleCart() {
-
-        // return this.showCart = !this.showCart;
-
-        // },
         handleChangeLanguague(locale) {
             this.setLocale(locale.code);
             window.localStorage.setItem('locale', locale.code);
-            // console.log(locale.dir);
-            console.log(typeof locale.dir);
             this.langDir = locale.dir;
-        }
+        },
+        async getUser() {
+            await this.authStore.verifyUser();
+        },
     },
-    // computed: {
-    //     currentLangDirection: {
-    //         get() {
-    //             return this.langDir
-    //         },
-    //         set(value) {
-    //             this.langDir = value;
-    //         }
-    //     }
 
-
-    // },
-    mounted() {
+    async mounted() {
         window.addEventListener('scroll', this.handleSticky);
+        await this.getUser();
     },
+
     updated() {
-        // Log a message when the component is updated
         console.log(this.langDir);
     },
-    components: { CategoryDropdown, MainNav, SidebarCartWidget }
+
+    components: { CategoryDropdown, MainNav, SidebarCartWidget },
 };
 </script>
+
+
+<style>
+[dir="rtl"] .header-area {
+    direction: rtl;
+}
+
+[dir="ltr"] .header-area {
+    direction: ltr;
+}
+</style>

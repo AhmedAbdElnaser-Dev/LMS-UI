@@ -26035,7 +26035,8 @@ div.tagcloud a:hover {
   display: flex;
 }
 
-.signup-wrapper input {
+.signup-wrapper input,
+.signup-wrapper select {
   width: 100%;
   height: 55px;
   background: #f5f5f5;

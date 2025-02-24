@@ -1,14 +1,18 @@
-<script>
-import SignInMain from '~~/components/SignIn/SignInMain.vue';
+<script setup>
+import { onMounted } from "vue";
+import { useAuthStore } from "@/stores/authStore";
+import { navigateTo } from "#app";
+import SignInMain from "~~/components/SignIn/SignInMain.vue";
 
-export default {
-    name: "signin",
-    components: {
-        SignInMain
+const authStore = useAuthStore();
+
+onMounted(() => {
+    if (authStore.user) {
+        navigateTo("/");
     }
-};
+});
 </script>
+
 <template>
     <SignInMain />
 </template>
-<style scoped></style>

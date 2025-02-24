@@ -13,11 +13,11 @@ export default {
         courseItemsMixin
     ],
     components: {
-    FooterOne,
-    Pagination,
-    HeaderFour,
-    ScrollToTop
-}
+        FooterOne,
+        Pagination,
+        HeaderFour,
+        ScrollToTop
+    }
 };
 </script>
 
@@ -127,7 +127,7 @@ export default {
                                                     <NuxtLink to="/instructor-profile"><img :src="item.instructorImage"
                                                             alt="tutor-img"></NuxtLink>
                                                     <NuxtLink to="/instructor-profile"><span>{{ item.instructor
-                                                    }}</span>
+                                                            }}</span>
                                                     </NuxtLink>
                                                 </div>
                                                 <p>{{ item.description }}</p>
@@ -166,5 +166,4 @@ export default {
 
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

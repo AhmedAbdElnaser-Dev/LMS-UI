@@ -9,43 +9,45 @@
                                 <div class="col-md-5">
                                     <div class="signup-box text-center">
                                         <div class="signup-text">
-                                            <h3>Sign in</h3>
+                                            <h3>{{ $t("SignIn") }}</h3>
                                         </div>
                                         <div class="signup-thumb">
-                                            <img src="/img/sing-up/sign-up.png" alt="features-img">
+                                            <img src="/img/sing-up/sign-up.png" alt="signin">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="signup-form-wrapper">
                                         <div class="signup-wrapper">
-                                            <input type="text" placeholder="Email or Username" />
+                                            <input type="text" :placeholder="$t('EmailOrUsername')" />
                                         </div>
                                         <div class="signup-wrapper">
-                                            <input type="password" placeholder="Password" />
+                                            <input type="password" :placeholder="$t('Password')" />
                                         </div>
                                         <div class="signup-action">
                                             <div class="course-sidebar-list">
-                                                <input class="signup-checkbo" type="checkbox" id="sing-in" />
-                                                <label class="sign-check" for="sing-in"><span>Remember
-                                                        me</span></label>
+                                                <input class="signup-checkbox" type="checkbox" id="sign-in" />
+                                                <label class="sign-check" for="sign-in">
+                                                    <span>{{ $t("RememberMe") }}</span>
+                                                </label>
                                             </div>
                                         </div>
                                         <div class="sing-buttom mb-20">
-                                            <button type="submit" class="sing-btn">Signin now</button>
+                                            <button type="submit" class="sing-btn">{{ $t("SignInNow") }}</button>
                                         </div>
                                         <div class="registered wrapper">
                                             <div class="not-register">
-                                                <span>Not registered?</span><span>
-                                                    <NuxtLink to="/signup">Signup</NuxtLink>
+                                                <span>{{ $t("NotRegistered") }}</span>
+                                                <span>
+                                                    <NuxtLink to="/signup">{{ $t("Signup") }}</NuxtLink>
                                                 </span>
                                             </div>
                                             <div class="forget-password">
-                                                <NuxtLink to="/forgot-password">Forgot password?</NuxtLink>
+                                                <NuxtLink to="/forgot-password">{{ $t("ForgotPassword") }}</NuxtLink>
                                             </div>
                                         </div>
                                         <div class="sign-social text-center">
-                                            <span>Or Sign- in with</span>
+                                            <span>{{ $t("OrSignInWith") }}</span>
                                         </div>
                                         <div class="sign-social-icon">
                                             <div class="sign-facebook">
@@ -92,10 +94,13 @@
         </div>
     </div>
 </template>
+
 <script>
 export default {
-  methods: {
-    handleSubmit() {}
-  }
+    methods: {
+        handleSubmit() {
+            console.log("Form submitted");
+        }
+    }
 }
 </script>

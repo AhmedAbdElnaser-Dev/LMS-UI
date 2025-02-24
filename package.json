@@ -16,7 +16,11 @@
     "nuxt": "^3.10.0"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.10.1",
+    "axios": "^1.7.9",
     "bootstrap": "^5.2.3",
+    "js-cookie": "^3.0.5",
+    "pinia": "^3.0.1",
     "sass": "^1.57.1",
     "swiper": "^9.0.2",
     "v-calendar": "^2.4.1",

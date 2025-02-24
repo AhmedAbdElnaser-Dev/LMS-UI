@@ -6,17 +6,17 @@ import ScrollToTop from "../Common/ScrollToTop.vue";
 export default {
     name: "app",
     components: {
-    FooterOne,
-    HeaderFour,
-    ScrollToTop
-}
+        FooterOne,
+        HeaderFour,
+        ScrollToTop
+    }
 };
 </script>
 
 <template>
     <div>
         <!-- header-area-start -->
-        <HeaderFour />
+        <!-- <HeaderFour /> -->
         <!-- header-area-end -->
 
         <div class="content-error-area pt-120 pb-120">
@@ -42,7 +42,7 @@ export default {
             </div>
         </div>
         <!-- education-area-end -->
-        <FooterOne />
+        <!-- <FooterOne /> -->
         <!-- education-area-end -->
 
         <!-- scrolltop-area-start -->
@@ -52,5 +52,4 @@ export default {
 
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

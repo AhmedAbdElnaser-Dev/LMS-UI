@@ -11,20 +11,20 @@ export default {
     name: "app",
     mixins: [productItemsMixin],
     components: {
-    FooterOne,
-    PageTitle,
-    ShopSidebar,
-    HeaderFour,
-    ScrollToTop,
-    ProductPopup
-}
+        FooterOne,
+        PageTitle,
+        ShopSidebar,
+        HeaderFour,
+        ScrollToTop,
+        ProductPopup
+    }
 };
 </script>
 
 <template>
     <div>
         <!-- header-area-start -->
-        <HeaderFour />
+        <!-- <HeaderFour /> -->
         <!-- header-area-end -->
 
         <!-- course-area-start -->
@@ -50,7 +50,8 @@ export default {
                                                 <NuxtLink to="/cart"><i class="fal fa-cart-arrow-down"></i></NuxtLink>
                                             </li>
                                             <li>
-                                                <button type="button" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-eye"></i></button>
+                                                <button type="button" data-bs-toggle="modal"
+                                                    data-bs-target="#productModalId"><i class="fal fa-eye"></i></button>
                                             </li>
                                             <li>
                                                 <NuxtLink to="/wishlist"><i class="fal fa-heart"></i></NuxtLink>
@@ -81,7 +82,7 @@ export default {
         <!-- shop-area-end -->
 
         <!-- footer-area-start -->
-        <FooterOne />
+        <!-- <FooterOne /> -->
         <!-- footer-area-end -->
 
         <!-- footer-area-end -->
@@ -96,5 +97,4 @@ export default {
 
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

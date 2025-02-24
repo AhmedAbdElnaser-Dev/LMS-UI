@@ -7,11 +7,11 @@ import ScrollToTop from "../Common/ScrollToTop.vue";
 export default {
    name: "app",
    components: {
-    FooterOne,
-    PageTitle,
-    HeaderFour,
-    ScrollToTop
-},
+      FooterOne,
+      PageTitle,
+      HeaderFour,
+      ScrollToTop
+   },
    data() {
       return {
          eventList: [{
@@ -64,7 +64,7 @@ export default {
    <div>
 
       <!-- header-area-start -->
-      <HeaderFour />
+      <!-- <HeaderFour /> -->
       <!-- header-area-end -->
 
       <!-- PageTitle-area-end -->
@@ -167,7 +167,7 @@ export default {
       <!-- event-area-end -->
 
       <!-- education-area-end -->
-      <FooterOne />
+      <!-- <FooterOne /> -->
       <!-- education-area-end -->
 
       <!-- scrolltop-area-start -->
@@ -178,5 +178,4 @@ export default {
 
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

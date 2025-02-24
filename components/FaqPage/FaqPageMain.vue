@@ -9,21 +9,21 @@ import ScrollToTop from "../Common/ScrollToTop.vue";
 export default {
     name: "app",
     components: {
-    FooterOne,
-    FaqQues,
-    FaqBanner,
-    HeaderFour,
-    FaqTopics,
-    ScrollToTop
-}
+        FooterOne,
+        FaqQues,
+        FaqBanner,
+        HeaderFour,
+        FaqTopics,
+        ScrollToTop
+    }
 };
 </script>
 
 <template>
-    <div>
+    <div class="faq-page">
 
         <!-- header-area-start -->
-        <HeaderFour />
+        <!-- <HeaderFour /> -->
         <!-- header-area-end -->
 
         <!-- FaqBanner-area-start -->
@@ -39,7 +39,7 @@ export default {
         <!-- FaqTopic-area-end -->
 
         <!-- education-area-end -->
-        <FooterOne />
+        <!-- <FooterOne /> -->
         <!-- education-area-end -->
 
         <!-- scrolltop-area-start -->
@@ -51,4 +51,7 @@ export default {
 </template>
 
 <style scoped>
+.faq-page {
+    margin-top: 108px;
+}
 </style>
