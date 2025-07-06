@@ -7,7 +7,7 @@
 
 <script>
 import { useAuthStore } from "@/stores/authStore";
-import LoadingSpinner from "@/components/common/LoadingSpinner.vue";
+import LoadingSpinner from "@/components/common/LoadingSpinner";
 
 export default {
   setup() {
