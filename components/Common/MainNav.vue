@@ -102,6 +102,39 @@
     </nav>
 </template>
 
+<script>
+import departmentsData from '@/mixins/departments.json';
+import { useI18n } from 'vue-i18n';
+
+export default {
+    name: 'MainNav',
+    data() {
+        return {
+            showDepartments: false,
+            hoveredDept: null,
+            departments: departmentsData.departments,
+        };
+    },
+    computed: {
+        currentLocale() {
+            return this.$i18n.locale;
+        }
+    },
+    methods: {
+        slugify(text) {
+            return text
+                .toString()
+                .normalize('NFD')
+                .replace(/\p{Diacritic}/gu, '')
+                .replace(/[^\w\s-]/g, '')
+                .trim()
+                .replace(/\s+/g, '-')
+                .toLowerCase();
+        }
+    }
+};
+</script>
+
 <style scoped lang="scss">
 nav {
     display: flex;

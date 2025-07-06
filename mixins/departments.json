@@ -1,0 +1,150 @@
+{
+	"departments": [
+		{
+			"name": "Quran Classes",
+			"translation": "دورات القرآن",
+			"courses": [
+				{
+					"original": "Learn Quran With Tajweed",
+					"translation": "تعلم القرآن بالتجويد"
+				},
+				{
+					"original": "Quran Recitation Course",
+					"translation": "دورة تلاوة القرآن"
+				},
+				{
+					"original": "Quran Reading Course",
+					"translation": "دورة قراءة القرآن"
+				},
+				{
+					"original": "Quran Classes For Kids",
+					"translation": "دورات القرآن للأطفال"
+				},
+				{
+					"original": "Quran Classes For Adults",
+					"translation": "دورات القرآن للبالغين"
+				},
+				{
+					"original": "Quran Classes For Sisters",
+					"translation": "دورات القرآن للأخوات"
+				},
+				{
+					"original": "Quran Classes For Beginners",
+					"translation": "دورات القرآن للمبتدئين"
+				},
+				{
+					"original": "Weekend Quran Classes",
+					"translation": "دورات القرآن في عطلة نهاية الأسبوع"
+				},
+				{
+					"original": "Sunni Quran Classes",
+					"translation": "دورات القرآن السنية"
+				}
+			]
+		},
+		{
+			"name": "Quran Memorization",
+			"translation": "حفظ القرآن",
+			"courses": [
+				{
+					"original": "Full Quran Memorization",
+					"translation": "حفظ القرآن كاملاً"
+				},
+				{
+					"original": "Juz Amma Memorization",
+					"translation": "حفظ جزء عم"
+				},
+				{
+					"original": "Juz Tabarak Memorization",
+					"translation": "حفظ جزء تبارك"
+				},
+				{
+					"original": "Short Surahs Memorization",
+					"translation": "حفظ السور القصيرة"
+				},
+				{
+					"original": "Revision & Hifz Support",
+					"translation": "مراجعة ودعم الحفظ"
+				}
+			]
+		},
+		{
+			"name": "Tajweed Classes",
+			"translation": "دورات التجويد",
+			"courses": [
+				{
+					"original": "Basic Tajweed Rules",
+					"translation": "قواعد التجويد الأساسية"
+				},
+				{
+					"original": "Advanced Tajweed Application",
+					"translation": "تطبيق التجويد المتقدم"
+				},
+				{
+					"original": "Tajweed For Kids",
+					"translation": "تجويد للأطفال"
+				},
+				{
+					"original": "Tajweed With Practice",
+					"translation": "تجويد مع تطبيق عملي"
+				},
+				{
+					"original": "Makharij and Sifaat",
+					"translation": "المخارج والصفات"
+				}
+			]
+		},
+		{
+			"name": "Arabic Classes",
+			"translation": "دورات اللغة العربية",
+			"courses": [
+				{
+					"original": "Arabic Reading Course",
+					"translation": "دورة قراءة اللغة العربية"
+				},
+				{
+					"original": "Arabic Grammar Basics",
+					"translation": "أساسيات النحو العربي"
+				},
+				{
+					"original": "Arabic Conversation Course",
+					"translation": "دورة المحادثة بالعربية"
+				},
+				{
+					"original": "Arabic For Kids",
+					"translation": "العربية للأطفال"
+				},
+				{
+					"original": "Arabic For Quran Understanding",
+					"translation": "العربية لفهم القرآن"
+				}
+			]
+		},
+		{
+			"name": "Islamic Classes",
+			"translation": "دورات إسلامية",
+			"courses": [
+				{
+					"original": "Islamic Studies For Kids",
+					"translation": "دراسات إسلامية للأطفال"
+				},
+				{
+					"original": "Fiqh Basics",
+					"translation": "أساسيات الفقه"
+				},
+				{
+					"original": "Aqeedah Course",
+					"translation": "دورة العقيدة"
+				},
+				{
+					"original": "Seerah of the Prophet",
+					"translation": "سيرة النبي"
+				},
+				{
+					"original": "Islamic Manners and Ethics",
+					"translation": "الآداب والأخلاق الإسلامية"
+				}
+			]
+		}
+	]
+}

@@ -56,14 +56,14 @@ export default defineNuxtConfig({
         code: "ar",
         iso: "ar",
         dir: "rtl",
-        name: "Arabic(EG)",
+        name: "Arabic",
         file: "ar.json"
       },
       {
         code: "en",
         iso: "en",
         dir: "ltr",
-        name: "English(US)",
+        name: "English",
         file: "en.json"
       }
     ],

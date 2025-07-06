@@ -13,6 +13,7 @@ import FooterOne from "../Common/FooterOne"
 import Header from "../Common/Header.vue";
 import ScrollToTop from "../Common/ScrollToTop.vue";
 import HowSiteWork from "./HowSiteWork.vue";
+import AcademicCourse from "../HomeThree/academicCourse.vue";
 
 export default {
     name: "app",
@@ -24,6 +25,7 @@ export default {
         CourseSection,
         StudentSection,
         FeatureSection,
+        AcademicCourse,
         BrowseCourse,
         TestimonialSection,
         EducationSection,
@@ -53,7 +55,8 @@ export default {
         <!-- categories-area-end -->
 
         <!-- course-area-end -->
-        <CourseSection />
+        <!-- <CourseSection /> -->
+        <AcademicCourse />
         <!-- course-area-end -->
 
         <!-- feature-area-start -->
@@ -79,6 +82,7 @@ export default {
         <!-- brand-area-start -->
         <BrandSection />
         <!-- brand-area-end -->
+
 
         <!-- scrolltop-area-start -->
         <ScrollToTop />
