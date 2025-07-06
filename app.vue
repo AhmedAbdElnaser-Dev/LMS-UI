@@ -1,5 +1,5 @@
 <template>
-  <LoadingSpinner :loading="authStore.loading" />
+  <!-- <LoadingSpinner :loading="authStore.loading" /> -->
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
@@ -7,7 +7,7 @@
 
 <script>
 import { useAuthStore } from "@/stores/authStore";
-import LoadingSpinner from "@/components/common/LoadingSpinner";
+// import LoadingSpinner from "/components/common/LoadingSpinner.vue";
 
 export default {
   setup() {
@@ -17,7 +17,7 @@ export default {
     };
   },
   components: {
-    LoadingSpinner
+    // LoadingSpinner
   }
 }
 
