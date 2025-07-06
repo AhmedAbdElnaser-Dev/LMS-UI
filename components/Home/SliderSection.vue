@@ -1,25 +1,25 @@
 <template>
-    <div class="home-slider">
+    <div class="home-slider" :dir="isArabic ? 'rtl' : 'ltr'">
         <swiper :key="currentLang" :modules="modules" :loop="true" :spaceBetween="30"
             :autoplay="{ delay: 10000, disableOnInteraction: true }" :speed="1500" :grabCursor="true"
             :slides-per-view="1">
-
-            <swiper-slide v-for="item in productItemss.slice(0, 7)" :key="item.id">
+            <swiper-slide v-for="(slide, index) in slides" :key="index">
                 <div class="slider-content-wrapper">
                     <div class="slider-content-container">
                         <div class="background-image-container">
-                            <img src="/img/home-slider/covers-01.png" alt="">
+                            <img :src="slide.image" alt="" />
                         </div>
                         <div class="verse-text-container">
                             <div class="verse-image-container">
-                                <img src="/img/home-slider/home-05.png" alt="">
+                                <img src="/img/home-slider/home-05.png" alt="" />
                             </div>
                             <ul class="text-container">
-                                <li class="title">{{ $t("QuranCourses") }}</li>
-                                <li class="content">{{ $t("HomeSlider1Text") }}</li>
-                                <li class="button">
-                                    <button class="free-trial-btn edu-btn">{{ $t("Slide1Button") }}</button>
-                                </li>
+                                <li class="title">{{ $t(slide.title) }}</li>
+                                <li class="subtitle">{{ $t(slide.subtitle) }}</li>
+                                <!-- <li class="button"> -->
+                                <button class="free-trial-btn edu-btn" style="width: fit-content;">{{
+                                    $t(slide.buttonText) }}</button>
+                                <!-- </li> -->
                             </ul>
                         </div>
                     </div>
@@ -32,11 +32,9 @@
 <script>
 import { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from "swiper/vue";
-import productItemsMixin from '~~/mixins/productItemsMixin'
 
 export default {
-    name: 'relatedProduct',
-    mixins: [productItemsMixin],
+    name: 'HomeSlider',
     components: {
         Swiper,
         SwiperSlide,
@@ -44,12 +42,40 @@ export default {
     computed: {
         currentLang() {
             return this.$i18n.locale;
+        },
+        isArabic() {
+            return this.$i18n.locale === 'ar';
         }
     },
     setup() {
+        const slides = [
+            {
+                id: 'quraan',
+                image: '/img/new_cover_quran.png',
+                title: 'QuranCourses',
+                subtitle: 'HomeSlider2Subtitle',
+                buttonText: 'Slide2Button'
+            },
+            {
+                id: 'tjweed',
+                image: '/img/new_cover_tajweed.png',
+                title: 'TajweedCourses',
+                subtitle: 'HomeSlider3Subtitle',
+                buttonText: 'Slide3Button'
+            },
+            {
+                id: 'arabic',
+                image: '/img/new_cover_arabic.png',
+                title: 'QuranCourses',
+                subtitle: 'HomeSlider4Subtitle',
+                buttonText: 'Slide4Button'
+            }
+        ];
+
         return {
             modules: [Autoplay],
-        }
+            slides,
+        };
     }
-}
+};
 </script>

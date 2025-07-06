@@ -90,5 +90,14 @@
 	"Male": "Male",
 	"Female": "Female",
 	"Other": "Other",
-	"PreferNotToSay": "Prefer Not To Say"
+	"PreferNotToSay": "Prefer Not To Say",
+	"ExistingCourses": "Existing Courses",
+	"TajweedCourses": "Tajweed Courses",
+	"HomeSlider1Subtitle": "Learn from experienced teachers",
+	"HomeSlider2Subtitle": "Understand the Holy Quran",
+	"HomeSlider3Subtitle": "Master Tajweed rules",
+	"HomeSlider4Subtitle": "Memorize Quran with meaning",
+	"Slide2Button": "Know More",
+	"Slide3Button": "Know More",
+	"Slide4Button": "Know More"
 }

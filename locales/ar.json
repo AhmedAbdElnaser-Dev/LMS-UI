@@ -85,5 +85,14 @@
 	"SelectGender": "النوع",
 	"Timezone": "المنطقة الزمنية",
 	"Country": "الدولة",
-	"TelegramNumber": "رقم التليجرام"
+	"TelegramNumber": "رقم التليجرام",
+	"ExistingCourses": "الدورات المتاحة",
+	"TajweedCourses": "دورات التجويد",
+	"HomeSlider1Subtitle": "تعلم من معلمين ذوي خبرة",
+	"HomeSlider2Subtitle": "افهم القرآن الكريم",
+	"HomeSlider3Subtitle": "أتقن قواعد التجويد",
+	"HomeSlider4Subtitle": "احفظ القرآن مع المعاني",
+	"Slide2Button": "اعرف المزيد",
+	"Slide3Button": "اعرف المزيد",
+	"Slide4Button": "اعرف المزيد"
 }

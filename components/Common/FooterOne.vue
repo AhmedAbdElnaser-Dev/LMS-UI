@@ -1,5 +1,5 @@
 <template>
-    <footer>
+   <footer>
       <div class="footer-area pt-100">
          <div class="container">
             <div class="footer-main mb-60">
@@ -23,11 +23,21 @@
                      <div class="footer-widget f-w2 mb-40">
                         <h3>Online Platform</h3>
                         <ul>
-                           <li><NuxtLink to="/course">Proper Guidelines</NuxtLink></li>
-                           <li><NuxtLink to="/course">Digital Library</NuxtLink></li>
-                           <li><NuxtLink to="/course">Compare Us</NuxtLink></li>
-                           <li><NuxtLink to="/become-instructor">Become Instructor</NuxtLink></li>
-                           <li><NuxtLink to="/course">Build Career</NuxtLink></li>
+                           <li>
+                              <NuxtLink to="/course">Proper Guidelines</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/course">Digital Library</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/course">Compare Us</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/become-instructor">Become Instructor</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/course">Build Career</NuxtLink>
+                           </li>
                         </ul>
                      </div>
                   </div>
@@ -35,11 +45,21 @@
                      <div class="footer-widget f-w3 mb-40">
                         <h3>Browse Courses</h3>
                         <ul>
-                           <li><NuxtLink to="/course">Development</NuxtLink></li>
-                           <li><NuxtLink to="/course">Business</NuxtLink></li>
-                           <li><NuxtLink to="/course">Health & Fitness</NuxtLink></li>
-                           <li><NuxtLink to="/course">Life Styles</NuxtLink></li>
-                           <li><NuxtLink to="/course">Photography</NuxtLink></li>
+                           <li>
+                              <NuxtLink to="/course">Development</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/course">Business</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/course">Health & Fitness</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/course">Life Styles</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/course">Photography</NuxtLink>
+                           </li>
                         </ul>
                      </div>
                   </div>
@@ -47,11 +67,21 @@
                      <div class="footer-widget f-w4 mb-40">
                         <h3>Insight Community</h3>
                         <ul>
-                           <li><NuxtLink to="/contact">Global Partners</NuxtLink></li>
-                           <li><NuxtLink to="/faq-page">Forum</NuxtLink></li>
-                           <li><NuxtLink to="/contact">Help & Support</NuxtLink></li>
-                           <li><NuxtLink to="/course">Community</NuxtLink></li>
-                           <li><NuxtLink to="/faq-details">Documentation</NuxtLink></li>
+                           <li>
+                              <NuxtLink to="/contact">Global Partners</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/faq-page">Forum</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/contact">Help & Support</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/course">Community</NuxtLink>
+                           </li>
+                           <li>
+                              <NuxtLink to="/faq-details">Documentation</NuxtLink>
+                           </li>
                         </ul>
                      </div>
                   </div>
