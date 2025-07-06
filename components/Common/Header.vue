@@ -29,7 +29,7 @@
                                         <NuxtLink to="/"><img src="/img/logo/colioured logo&text.svg" alt="logo">
                                         </NuxtLink>
                                     </div>
-                                    <div class="category-menu d-none d-xxl-block">
+                                    <!-- <div class="category-menu d-none d-xxl-block">
                                         <div class="Category-click">
                                             <figure class="cattext"><svg class="icons" id="menu_1_" data-name="menu (1)"
                                                     xmlns="http://www.w3.org/2000/svg" width="18.087" height="18.087"
@@ -64,7 +64,7 @@
                                                 </svg> <span class="text">{{ $t("Category") }}</span></figure>
                                             <CategoryDropdown />
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="main-menu d-none d-xl-block">
                                         <MainNav />
                                     </div>

@@ -61,5 +61,18 @@ export const useAuthStore = defineStore("auth", {
 				this.loading = false;
 			}
 		},
+
+		async logout() {
+			this.loading = true;
+			try {
+				await api().post("/api/users/signin");
+				this.user = null;
+				navigateTo("/login");
+			} catch (error) {
+				console.error("Logout failed:", error);
+			} finally {
+				this.loading = false;
+			}
+		},
 	},
 });

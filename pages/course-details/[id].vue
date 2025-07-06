@@ -36,7 +36,6 @@ export default {
         fetchCourse() {
             if (this.currentLang === "ar") {
                 this.course = ar.courses.find((item) => item.id == this.id);
-                console.log(this.id, this.course);
             } else {
                 this.course = en.courses.find((item) => item.id == this.id);
             }

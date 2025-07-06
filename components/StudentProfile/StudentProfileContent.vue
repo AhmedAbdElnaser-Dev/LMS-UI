@@ -9,7 +9,7 @@
                 <div class="student-profile-author-text">
                     <span>Hello,</span>
                     <h3 class='student-profile-author-name'>{{ authStore.user.firstName + " " + authStore.user.lastName
-                        }}</h3>
+                    }}</h3>
                 </div>
             </div>
             <div class="row">
@@ -67,8 +67,9 @@
                             </li> -->
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="logout-tab" data-bs-toggle="tab" data-bs-target="#logout"
-                                    type="button" role="tab" aria-controls="logout" aria-selected="false">
-                                    <NuxtLink to="/signin"><i class="fas fa-sign-out-alt"></i>Logout</NuxtLink>
+                                    type="button" role="tab" aria-controls="logout" aria-selected="false"
+                                    @click="authStore.logout">
+                                    <i class="fas fa-sign-out-alt"></i>Logout
                                 </button>
                             </li>
                         </ul>

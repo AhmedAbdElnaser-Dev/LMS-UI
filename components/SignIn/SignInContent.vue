@@ -99,7 +99,6 @@
 export default {
     methods: {
         handleSubmit() {
-            console.log("Form submitted");
         }
     }
 }

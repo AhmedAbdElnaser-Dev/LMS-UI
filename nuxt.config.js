@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  router: {
+    middleware: ['subdomain'],
+  },
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.API_BASE_URL,
@@ -45,23 +48,23 @@ export default defineNuxtConfig({
   ],
   i18n: {
     /* module options */
-    lazy:true,
-    langDir:"locales",
+    lazy: true,
+    langDir: "locales",
     strategy: "no_prefix",
-    locales:[
+    locales: [
       {
-        code:"ar",
-        iso:"ar",
-        dir:"rtl",
-        name:"Arabic(EG)",
-        file:"ar.json"
+        code: "ar",
+        iso: "ar",
+        dir: "rtl",
+        name: "Arabic(EG)",
+        file: "ar.json"
       },
       {
-        code:"en",
-        iso:"en",
-        dir:"ltr",
-        name:"English(US)",
-        file:"en.json"
+        code: "en",
+        iso: "en",
+        dir: "ltr",
+        name: "English(US)",
+        file: "en.json"
       }
     ],
     defaultLocale: "en",
