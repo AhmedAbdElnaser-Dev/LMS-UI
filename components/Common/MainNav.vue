@@ -6,55 +6,36 @@
             </li>
 
             <li class="menu-item-has-children">
-                <NuxtLink to="/shop">{{ $t("Courses") }}</NuxtLink>
+                <a href="javascript:void(0)">{{ $t("Courses") }}</a>
                 <ul class="sub-menu">
-
-                    <li class="menu-item-has-children">
-                        <NuxtLink to="/shop">{{ $t("Quraan") }}</NuxtLink>
-                        <ul class="sub-menu">
-                            <li>
-                                <NuxtLink to="/shop">{{ $t("Quraan") }} - 1</NuxtLink>
-                            </li>
-                            <li>
-                                <NuxtLink to="/shop">{{ $t("Quraan") }} - 2</NuxtLink>
-                            </li>
-                            <li>
-                                <NuxtLink to="/shop">{{ $t("Quraan") }} - 3</NuxtLink>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item-has-children">
-                        <NuxtLink to="/shop">{{ $t("Tajweed") }}</NuxtLink>
-                        <ul class="sub-menu">
-                            <li>
-                                <NuxtLink to="/shop">{{ $t("Tajweed") }} - 1</NuxtLink>
-                            </li>
-                            <li>
-                                <NuxtLink to="/shop">{{ $t("Tajweed") }} - 2</NuxtLink>
-                            </li>
-                            <li>
-                                <NuxtLink to="/shop">{{ $t("Tajweed") }} - 3</NuxtLink>
-                            </li>
-                        </ul>
-                    </li>
-
-
-                    <li class="menu-item-has-children">
-                        <NuxtLink to="/shop">{{ $t("Arabic") }}</NuxtLink>
-                        <ul class="sub-menu">
-                            <li>
-                                <NuxtLink to="/shop">{{ $t("Arabic") }} - 1</NuxtLink>
-                            </li>
-                            <li>
-                                <NuxtLink to="/shop">{{ $t("Arabic") }} - 2</NuxtLink>
-                            </li>
-                            <li>
-                                <NuxtLink to="/shop">{{ $t("Arabic") }} - 3</NuxtLink>
-                            </li>
-                        </ul>
-                    </li>
-
+                    <template v-for="section in courses">
+                        <li v-if="section.departments" class="menu-item-has-children" :key="section.id">
+                            <a href="javascript:void(0)">{{ section[currentLocale] }}</a>
+                            <ul class="sub-menu">
+                                <template v-for="dept in section.departments">
+                                    <li v-if="dept.courses" class="menu-item-has-children" :key="dept.id">
+                                        <a href="javascript:void(0)">{{ dept[currentLocale] }}</a>
+                                        <ul class="sub-menu">
+                                            <li v-for="course in dept.courses" :key="course.id">
+                                                <NuxtLink :to="'/shop?course=' + slugify(course[currentLocale])">{{
+                                                    course[currentLocale] }}</NuxtLink>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </template>
+                            </ul>
+                        </li>
+                        <li v-if="section.courses" class="menu-item-has-children"
+                            :key="'section-courses-' + section.id">
+                            <a href="javascript:void(0)">{{ section[currentLocale] }}</a>
+                            <ul class="sub-menu">
+                                <li v-for="course in section.courses" :key="course.id">
+                                    <NuxtLink :to="'/shop?course=' + slugify(course[currentLocale])">{{
+                                        course[currentLocale] }}</NuxtLink>
+                                </li>
+                            </ul>
+                        </li>
+                    </template>
                 </ul>
             </li>
             <li class="menu-item">
@@ -153,16 +134,18 @@
 </template>
 
 <script>
-import departmentsData from '@/mixins/departments.json';
+// import departmentsData from '@/mixins/departments.json';
 import { useI18n } from 'vue-i18n';
+import courses from "@/mixins/courses.json"
 
 export default {
     name: 'MainNav',
     data() {
         return {
-            showDepartments: false,
-            hoveredDept: null,
-            departments: departmentsData.departments,
+            // showDepartments: false,
+            // hoveredDept: null,
+            // departments: departmentsData.departments,
+            courses,
         };
     },
     computed: {
