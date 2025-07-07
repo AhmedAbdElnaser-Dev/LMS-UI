@@ -4,8 +4,58 @@
             <li class="menu-item">
                 <NuxtLink to="/about">{{ $t("About") }}</NuxtLink>
             </li>
-            <li class="menu-item">
+
+            <li class="menu-item-has-children">
                 <NuxtLink to="/shop">{{ $t("Courses") }}</NuxtLink>
+                <ul class="sub-menu">
+
+                    <li class="menu-item-has-children">
+                        <NuxtLink to="/shop">{{ $t("Quraan") }}</NuxtLink>
+                        <ul class="sub-menu">
+                            <li>
+                                <NuxtLink to="/shop">{{ $t("Quraan") }} - 1</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/shop">{{ $t("Quraan") }} - 2</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/shop">{{ $t("Quraan") }} - 3</NuxtLink>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children">
+                        <NuxtLink to="/shop">{{ $t("Tajweed") }}</NuxtLink>
+                        <ul class="sub-menu">
+                            <li>
+                                <NuxtLink to="/shop">{{ $t("Tajweed") }} - 1</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/shop">{{ $t("Tajweed") }} - 2</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/shop">{{ $t("Tajweed") }} - 3</NuxtLink>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="menu-item-has-children">
+                        <NuxtLink to="/shop">{{ $t("Arabic") }}</NuxtLink>
+                        <ul class="sub-menu">
+                            <li>
+                                <NuxtLink to="/shop">{{ $t("Arabic") }} - 1</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/shop">{{ $t("Arabic") }} - 2</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/shop">{{ $t("Arabic") }} - 3</NuxtLink>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
             </li>
             <li class="menu-item">
                 <NuxtLink to="/faq-page">{{ $t("FAQs") }}</NuxtLink>

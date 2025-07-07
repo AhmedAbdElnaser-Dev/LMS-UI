@@ -1,7 +1,7 @@
 <template>
     <div class="home-slider" :dir="isArabic ? 'rtl' : 'ltr'">
         <swiper :key="currentLang" :modules="modules" :loop="true" :spaceBetween="30"
-            :autoplay="{ delay: 10000, disableOnInteraction: true }" :speed="1500" :grabCursor="true"
+            :autoplay="{ delay: 4000, disableOnInteraction: true }" :speed="1500" :grabCursor="true"
             :slides-per-view="1">
             <swiper-slide v-for="(slide, index) in slides" :key="index">
                 <div class="slider-content-wrapper">

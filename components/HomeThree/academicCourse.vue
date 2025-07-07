@@ -5,7 +5,7 @@
       <div class="row justify-content-center">
         <div class="col-xl-4 col-lg-4">
           <div class="section-title mb-50">
-            <h2>Featured <span class="down-mark-line-2">Courses</span></h2>
+            <h2> <span class="down-mark-line-2">Courses</span></h2>
           </div>
         </div>
       </div>

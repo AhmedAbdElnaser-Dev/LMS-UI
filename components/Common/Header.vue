@@ -6,12 +6,23 @@
                 :class="`${hideReminder ? 'header-note-area p-relative d-none d-md-block eduman-header-notice-hide' : 'header-note-area p-relative d-none d-md-block'}`">
                 <div class="container-fluid">
                     <div class="note-text text-center">
-                        <p>Enroll now and get <span>40% off</span> any course. Courses from <span>$5.99</span>.</p>
+                        <!-- <p>Enroll now and get <span>40% off</span> any course. Courses from <span>$5.99</span>.</p> -->
+                        <div class="d-flex justify-content-around align-items-center">
+                            <NuxtLink class="edo-course-sec-btn" :to="`/course-details`">
+                                {{ $t("JoinFreeTrialLessons") }}
+                            </NuxtLink>
+                            <div class="footer-icon">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="eduman-header-notice-action-close">
+                <!-- <div class="eduman-header-notice-action-close">
                     <button @click="handleReminder"><i class="fal fa-times"></i></button>
-                </div>
+                </div> -->
             </div>
 
             <!-- <div>
