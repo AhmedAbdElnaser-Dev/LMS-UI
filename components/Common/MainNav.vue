@@ -1,5 +1,5 @@
 <template>
-    <nav id="mobile-menu">
+    <nav id="mobile-menu" :class="{ rtl: isRtl }">
         <ul>
             <li class="menu-item">
                 <NuxtLink to="/about">{{ $t("About") }}</NuxtLink>
@@ -151,6 +151,11 @@ export default {
     computed: {
         currentLocale() {
             return this.$i18n.locale;
+        },
+        isRtl() {
+            // List of RTL locales, adjust as needed
+            const rtlLocales = ['ar', 'he', 'fa', 'ur'];
+            return rtlLocales.includes(this.$i18n.locale);
         }
     },
     methods: {
@@ -169,6 +174,53 @@ export default {
 </script>
 
 <style scoped lang="scss">
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item-has-children {
+    position: relative;
+}
+
+.sub-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    right: auto;
+    z-index: 999;
+    width: fit-content;
+    max-width: 220px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: none;
+    white-space: normal;
+    word-break: break-word;
+    padding: 0.5rem 0;
+    background: red;
+}
+
+.sub-menu li {
+    max-width: 100%;
+    padding: 0 1.2rem;
+}
+
+.menu-item-has-children:hover>.sub-menu,
+.menu-item-has-children:focus-within>.sub-menu {
+    display: block;
+}
+
+/* RTL support */
+.rtl .menu-item-has-children>.sub-menu {
+    left: auto;
+    right: 100%;
+}
+
+.rtl .sub-menu {
+    text-align: right;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
